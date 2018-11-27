@@ -5,7 +5,7 @@ import com.example.indrabayu.myapplication.model.Cell;
 import com.example.indrabayu.myapplication.model.Player;
 import com.example.indrabayu.myapplication.view.MainActivity;
 
-public class OthelloPresenter {
+public class TicTacToePresenter {
     // Manggil View
     public MainActivity activity;
 
