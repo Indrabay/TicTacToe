@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         buttonGroup = findViewById(R.id.gridlayout) as ViewGroup
         board = Board()
+
     }
 
     fun markCell(view : View){
