@@ -1,15 +1,22 @@
 package com.example.indrabayu.myapplication.model;
 
-import android.util.Log;
-
 public class Board {
     private Cell[][] cell = new Cell[3][3];
 
     private Player currentPlayer;
     private Player win;
+    private int cellsChoosen = 0;
 
     public Board() {
         restart();
+    }
+
+    public int getCellsChoosen() {
+        return cellsChoosen;
+    }
+
+    public int setCellsChoosen(int value) {
+        return this.cellsChoosen = value;
     }
 
     public void restart() {
@@ -37,7 +44,7 @@ public class Board {
         if (validateCoordinate(row, column)) {
             cell[row][column].setCellValue(currentPlayer);
             playerPlaying = currentPlayer;
-
+            this.cellsChoosen = this.cellsChoosen + 1;
             if (checkWin(currentPlayer, row, column)) {
                 win = currentPlayer;
             } else {
@@ -74,7 +81,7 @@ public class Board {
     }
 
     private Boolean finishGame() {
-        if (getWinner() != null) {
+        if (getWinner() != null && getCellsChoosen() == 9) {
             return true;
         }
 

@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
             if (board.winner != null) {
                 visible.setText(playing.toString())
                 winner.setText("WINNER")
+            } else if (board.cellsChoosen == 9) {
+                visible.setText("TOO BAD")
+                winner.setText("DRAW")
             }
         } else {
             Toast.makeText(this, "sudah selesai bro!", Toast.LENGTH_SHORT).show()
@@ -43,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     fun resetBoard(view : View) {
         board.restart()
+        board.setCellsChoosen(0)
 
         visible.setText("")
         winner.setText("")
