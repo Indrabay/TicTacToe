@@ -81,7 +81,7 @@ public class Board {
     }
 
     private Boolean finishGame() {
-        if (getWinner() != null && getCellsChoosen() == 9) {
+        if (getWinner() != null || getCellsChoosen() == 9) {
             return true;
         }
 
