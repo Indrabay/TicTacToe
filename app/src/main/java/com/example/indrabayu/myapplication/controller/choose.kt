@@ -53,8 +53,8 @@ class choose : AppCompatActivity() {
     }
 
     fun toGame(view : View) {
-//        var intent : Intent = Intent(this, MainActivity :: class.java)
-//        startActivity(intent)
+        var intent = Intent(this, MainActivity :: class.java)
+
 
         var player1 : Spinner = findViewById(R.id.player1)
         var player1Name = player1.selectedItem.toString()
@@ -62,7 +62,9 @@ class choose : AppCompatActivity() {
         var player2Name = player2.selectedItem.toString()
 
 
-        Toast.makeText(this, player1Name + player2Name, Toast.LENGTH_SHORT).show()
+        intent.putExtra("playerOneName", player1Name)
+        intent.putExtra("playerTwoName", player2Name)
 
+        startActivity(intent)
     }
 }
