@@ -61,10 +61,14 @@ class choose : AppCompatActivity() {
         var player2 : Spinner = findViewById(R.id.player2)
         var player2Name = player2.selectedItem.toString()
 
+        if (!player1Name.equals(player2Name)) {
+            intent.putExtra("playerOneName", player1Name)
+            intent.putExtra("playerTwoName", player2Name)
 
-        intent.putExtra("playerOneName", player1Name)
-        intent.putExtra("playerTwoName", player2Name)
+            startActivity(intent)
+        } else {
+            Toast.makeText(this@choose, "Player must be different", Toast.LENGTH_SHORT).show()
+        }
 
-        startActivity(intent)
     }
 }
